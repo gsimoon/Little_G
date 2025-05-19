@@ -1,0 +1,1 @@
+const Contact = () => <section className='contact'>Contato</section>; export default Contact;
