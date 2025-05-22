@@ -1,5 +1,7 @@
 import logo from "../images/logo.png"
 
+const booking_url = 'https://booking.resdiary.com/widget/Standard/LittleGPizzeria/10956'
+
 const Hero = () => (
   <section className="hero">
     <header className="hero_header">
@@ -8,7 +10,7 @@ const Hero = () => (
           <li><span>ABOUT US</span></li>
           <li><span>MENU</span></li>
           <img src={logo} alt="" className="logo" />
-          <li><span>BOOKINGS</span></li>
+          <li><span onClick={() => window.open(booking_url, "_blank", "noreferrer")}>BOOKINGS</span></li>
           <li><span>CONTACT</span></li>
         </ul>
       </div>

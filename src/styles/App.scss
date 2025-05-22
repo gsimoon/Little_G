@@ -9,6 +9,7 @@
 
 .app {
   width: 100%;
+
   .hero {
     min-height: 500px;
     background-color: black;
@@ -220,11 +221,10 @@
       font-size: 2.5rem;
     }
 
-    .menu_pizzas {
+    .menu_view {
       margin-top: 20px;
-      // background-color: gray;
 
-      .menu_title {
+      .view_title {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -236,30 +236,30 @@
           text-decoration: underline;
         }
       }
-      .pizzas_section {
+
+      .view_section {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         gap: 15px;
-        .pizza {
+
+        .card {
           background-color: #eee4e4;
           flex: 1 1 calc(25% - 15px);
           padding: 10px;
-          // border: 1px solid black;
           box-sizing: border-box;
           height: calc(100vh/2);
           max-height: 400px;
+          min-height: 250px;
           max-width: 25%;
-          max-width: 400px;
           min-width: 280px;
           display: flex;
           flex-direction: column;
           border-radius: 15px;
-          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
-          .pizza_img {
-            // background-color: aqua;
+          .card_img {
             height: 70%;
             display: flex;
             align-items: center;
@@ -268,38 +268,140 @@
 
             img {
               width: 100%;
-              // height: 100%;
               border-radius: 15px;
               object-fit: cover;
             }
-            
           }
-          .pizza_text {
-            // background-color: red;
+
+          .card_text {
             height: 30%;
             display: flex;
             flex-direction: column;
-            
+
             div {
               display: flex;
               align-items: center;
-              // border: 1px solid black;
             }
 
-            .pizza_name,
-            .pizza_price {
+            .card_name,
+            .card_price {
               height: 30%;
             }
-            .pizza_name {
+
+            .card_name {
               font-weight: 600;
             }
-            .pizza_price {
+
+            .card_price {
               align-items: end;
               justify-content: end;
               font-weight: 600;
             }
           }
         }
+      }
+    }
+  }
+
+  .contact {
+    background-color: #303030;
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    padding: 40px;
+    box-sizing: border-box;
+
+    .contact_info {
+      display: flex;
+      width: 100%;
+      min-height: 220px;
+      height: auto;
+
+      .info_address,
+      .info_hours,
+      .info_menu {
+        border: 1px solid black;
+        width: calc(100%/3);
+        height: 220px;
+        min-height: 220px;
+      }
+
+      .info_address {
+        height: 220px;
+        .address_logo {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 70%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+
+        .address_link {
+          width: 100%;
+          height: 30%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          span {
+            width: 100%;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: underline 0.10em rgba(255, 255, 255, 0);
+            transition: all 300ms;
+
+          }
+          span:hover {
+            cursor: pointer;
+            text-decoration-color: rgba(255, 255, 255, 1);
+          }
+          span:active {
+            transform: translateY(5px);
+          }
+        }
+
+      }
+
+      .info_hours {
+        .hours_list {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: #eee4e4;
+
+          span {
+            display: flex;
+            align-items: center;
+            height: 15%;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+          }
+
+          ul{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+          }
+        }
+      }
+
+      .info_menu {
       }
     }
   }
