@@ -316,11 +316,14 @@
       width: 100%;
       min-height: 220px;
       height: auto;
+      border-top: 0.5px solid #eee4e4;
+      border-bottom: 0.5px solid #eee4e4;
+      padding: 5px 0;
+      box-sizing: border-box;
 
       .info_address,
       .info_hours,
       .info_menu {
-        border: 1px solid black;
         width: calc(100%/3);
         height: 220px;
         min-height: 220px;
@@ -328,12 +331,13 @@
 
       .info_address {
         height: 220px;
+
         .address_logo {
           display: flex;
           align-items: center;
           justify-content: center;
           width: 100%;
-          height: 70%;
+          height: 60%;
 
           img {
             width: 100%;
@@ -344,7 +348,7 @@
 
         .address_link {
           width: 100%;
-          height: 30%;
+          height: 20%;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -359,14 +363,33 @@
             justify-content: center;
             text-decoration: underline 0.10em rgba(255, 255, 255, 0);
             transition: all 300ms;
-
           }
+
           span:hover {
             cursor: pointer;
             text-decoration-color: rgba(255, 255, 255, 1);
           }
+
           span:active {
             transform: translateY(5px);
+          }
+        }
+
+        .address_phone {
+          width: 100%;
+          height: 20%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          span {
+            width: 100%;
+            color: white;
+            font-size: 1rem;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
         }
 
@@ -391,7 +414,7 @@
             margin-bottom: 15px;
           }
 
-          ul{
+          ul {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -402,6 +425,108 @@
       }
 
       .info_menu {
+        .menu_pages {
+          width: 100%;
+          height: 75%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: #eee4e4;
+
+          ul {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+
+            li span {
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-decoration: underline 0.10em rgba(255, 255, 255, 0);
+              transition: all 300ms;
+            }
+
+            li span:hover {
+              cursor: pointer;
+              text-decoration-color: rgba(255, 255, 255, 1);
+            }
+
+            li span:active {
+              transform: translateY(5px);
+            }
+          }
+        }
+
+        .menu_socialmedia {
+          width: 100%;
+          height: 25%;
+          display: flex;
+          color: #eee4e4;
+          padding: 5px;
+          box-sizing: border-box;
+
+          .socialmedia_section {
+            cursor: pointer;
+            width: 50%;
+            height: 100%;
+            display: flex;
+
+            .section_logo {
+              width: 30%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .section_profile {
+              padding-left: 5px;
+              display: flex;
+              align-items: center;
+              font-size: 1.2rem;
+              font-weight: 500;
+            }
+          }
+
+          .book_now {
+            background-color: transparent;
+            height: 100%;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            button {
+              width: 60%;
+              height: 80%;
+              margin-right: 20px;
+              background-color: transparent;
+              background-color: #cf9800;
+              color: #eee4e4;
+              font-size: 1rem;
+              font-weight: 500;
+              border: 1px solid #725400;
+              border-radius: 4px; 
+              cursor: pointer;
+              transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+
+              &:hover {
+                background-color: #eee4e4;
+                color: #141414;
+                transform: scale(1.05);
+                box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+              }
+
+              &:active {
+                transform: scale(0.95);
+              }
+            }
+          }
+
+
+        }
+
       }
     }
   }
