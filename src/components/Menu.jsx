@@ -138,17 +138,18 @@ const menu = [
     ]
   },
 ]
-
+//https://docs.google.com/spreadsheets/d/1Rxt8GZOErNR6ZoAkDkSmYhnx3oVmVFtY-mGXZFMKqyw/edit?usp=sharing
+//https://api.sheetbest.com/sheets/e3653b6f-dac4-4a68-b967-79cac00d7b20
 const Menu = () => (
-  <section className='menu'>
+  <section id='menu' className='menu'>
     <div className="menu_header">MENU</div>
     {
-      menu.map(item => (
-        <div className="menu_view">
+      menu.map((item, i) => (
+        <div className="menu_view" key={i}>
           <div className="view_title"><h4>{item.name}</h4></div>
           <div className="view_section">
-            {(item.items).map(obj => (
-              <div className="card">
+            {(item.items).map((obj, i )=> (
+              <div className="card" key={i}>
                 <div className="card_img">
                   <img src={obj.img} alt="" />
                 </div>
