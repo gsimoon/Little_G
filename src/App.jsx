@@ -14,8 +14,8 @@ const App = () => {
 
   return (
     <div className="app">
-      {/* <Hero scrollTo={scrollTo} />
-      <About /> */}
+      <Hero scrollTo={scrollTo} />
+      <About />
       <Menu />
       <Contact scrollTo={scrollTo} />
     </div>

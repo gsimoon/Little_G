@@ -11,14 +11,16 @@
   width: 100%;
 
   .hero {
+    display: flex;
+    flex-direction: column;
     min-height: 500px;
-    background-color: black;
+    height: 100vh;
     width: 100%;
-    overflow: hidden;
+    background-color: rgb(32, 22, 22);
 
     .hero_header {
       width: 100%;
-      height: 8%;
+      height: 50px;
       min-height: 50px;
       background-color: azure;
       display: flex;
@@ -29,7 +31,7 @@
         justify-content: center;
         align-items: center;
 
-        ul {
+        ul.main_nav {
           width: 100%;
           height: 100%;
           display: flex;
@@ -93,66 +95,148 @@
           }
         }
 
+        .menu_toogle {
+          cursor: pointer;
+          display: none;
+          align-items: center;
+          justify-content: center;
+          height: auto;
+          position: absolute;
+          right: 15px;
+        }
       }
     }
 
     .hero_content {
+      height: calc(100% - 50px);
       width: 100%;
-      // height: 92%;
+      display: flex;
       position: relative;
 
       .content_bgd {
+        position: absolute;
         width: 100%;
-        height: 100%;
+        // height: 100%;
         background-image: url('../images/hero_bgd.jpg');
-        background-color: #cccccc;
+        background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        opacity: 30%;
+        opacity: 10%;
       }
 
       .content_description {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100%;
-        color: white;
-        padding: 20px;
+        width: 60%;
+        overflow: hidden;
+        padding: 50px;
         box-sizing: border-box;
-        display: flex;
-        align-items: center;
 
         .description_text {
           display: flex;
+          color: #eee4e4;
           flex-direction: column;
-          align-items: center;
-          justify-content: center;
           width: 100%;
-          height: 80%;
-          overflow: hidden;
-          text-overflow: ellipsis;
+          height: 100%;
+          justify-content: center;
 
           h1 {
-            margin-top: 45px;
-            font-size: 2.5rem;
-            height: 25%;
-            width: 100%;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: inline-block;
+            height: 20%;
+            font-size: 2rem;
           }
 
           span {
-            width: 100%;
-            line-height: 1.6;
+            line-height: 2rem;
             text-align: justify;
+            height: 50%;
+            font-size: 1.1rem;
           }
-
-
         }
       }
+    }
+
+    .open {
+      position: absolute;
+      right: 0;
+      background-color: azure;
+      display: flex;
+      top: calc(50px);
+      flex-direction: row;
+      min-width: 200px;
+      width: 20%;
+      padding: 10px;
+      padding-top: 0;
+      box-sizing: border-box;
+      height: 200px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      transition: all 0.5s ease;
+
+      ul.main_mobile_nav {
+        border-top: 1px solid black;
+        list-style: none;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          span {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 300ms;
+
+            &::before,
+            &::after {
+              content: '';
+              position: absolute;
+              transition: all 0.5s ease;
+            }
+
+            &:before {
+              left: 0;
+              bottom: 120%;
+              width: 1px;
+              height: 10px;
+            }
+
+            &:after {
+              left: 120%;
+              bottom: 0;
+              width: 10px;
+              height: 1px;
+            }
+
+            &:hover:before {
+              background-color: black;
+              bottom: 0;
+            }
+
+            &:hover:after {
+              background-color: black;
+              left: 0;
+            }
+          }
+
+          span:active {
+            transform: translateY(5px);
+          }
+        }
+
+        li:hover {
+          cursor: pointer;
+        }
+      }
+
+    }
+
+    .close {
+      display: none;
     }
   }
 
@@ -507,7 +591,7 @@
               font-size: 1rem;
               font-weight: 500;
               border: 1px solid #725400;
-              border-radius: 4px; 
+              border-radius: 4px;
               cursor: pointer;
               transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
 
@@ -527,6 +611,80 @@
 
         }
 
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    .hero {
+      height: auto;
+
+      .hero_header {
+        .header_menu {
+          ul.main_nav li {
+            display: none;
+          }
+
+          .menu_toogle {
+            display: flex;
+          }
+        }
+      }
+
+      .hero_content {
+        min-height: calc(100vh - 50px);
+
+        .content_description {
+          height: auto;
+          width: 100%;
+
+          .description_text {
+            align-items: center;
+
+            span {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    .contact {
+      .contact_info {
+        flex-direction: column;
+
+        .info_address,
+        .info_hours,
+        .info_menu {
+          width: 100%;
+        }
+
+        .info_address,
+        .info_hours {
+          margin-bottom: 20px;
+        }
+
+        .info_hours {
+          .hours_list {
+            ul {
+              align-items: center;
+            }
+          }
+        }
+
+        .info_menu {
+          .menu_socialmedia {
+            .socialmedia_section {
+              justify-content: center;
+            }
+
+            .book_now {
+              justify-content: center;
+            }
+          }
+        }
       }
     }
   }
