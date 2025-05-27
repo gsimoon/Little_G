@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const booking_url = 'https://booking.resdiary.com/widget/Standard/LittleGPizzeria/10956'
 
-const Hero = ({ scrollTo }) => {
+const Hero = ({ scrollTo, info }) => {
   const handleClick = (item) => {
     scrollTo(item);
     setIsMenuOpen(false)

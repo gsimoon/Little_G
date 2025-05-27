@@ -25,19 +25,18 @@ function transformData(data) {
     items: grouped[category]
   }));
 }
-//https://docs.google.com/spreadsheets/d/1Rxt8GZOErNR6ZoAkDkSmYhnx3oVmVFtY-mGXZFMKqyw/edit?usp=sharing
-//https://api.sheetbest.com/sheets/e3653b6f-dac4-4a68-b967-79cac00d7b20
+
 const Menu = () => {
 
   const [menuItems, setMenuItems] = useState([]);
 
   const apiResponse = async () => {
-    await axios.get('https://api.sheetbest.com/sheets/e3653b6f-dac4-4a68-b967-79cac00d7b20')
+    await axios.get(process.env.REACT_APP_API_URL_MENU)
       .then((response) => {
         setMenuItems(transformData(response.data));
       })
-      .catch(error => {
-        console.error(`error1`);
+      .catch(err => {
+        console.error(err);
       });
   }
 

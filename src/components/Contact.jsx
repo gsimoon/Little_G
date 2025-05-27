@@ -6,10 +6,10 @@ const instagram_link = 'https://www.instagram.com/little.g.pizza/'
 const instagram_profile = '@little.g.pizza'
 const booking_url = 'https://booking.resdiary.com/widget/Standard/LittleGPizzeria/10956'
 
-const Contact = ({ scrollTo }) => {
+const Contact = ({scrollTo, info}) => {
     const handleClick = (item) => {
         scrollTo(item);
-    };
+    };    
 
     return (
         <section id='contact' className='contact'>
