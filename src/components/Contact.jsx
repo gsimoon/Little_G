@@ -1,15 +1,21 @@
 import logo from "../images/logo_white.png"
 import Icons from "../icons/Icons";
 
-const maps_link = 'https://maps.app.goo.gl/Y2nq5pbEjnoDumkW8'
-const instagram_link = 'https://www.instagram.com/little.g.pizza/'
-const instagram_profile = '@little.g.pizza'
-const booking_url = 'https://booking.resdiary.com/widget/Standard/LittleGPizzeria/10956'
+const Contact = ({ scrollTo, info }) => {
+    
+    const booking_url = info.length === 0 ? '' : info.filter(item => item.object === `Booking Link`)[0].content
+    const maps_link = info.length === 0 ? '' : info.filter(item => item.object === `Address Link`)[0].content
+    const instagram_link = info.length === 0 ? '' : info.filter(item => item.object === `Instagram Link`)[0].content
+    const instagram_profile = info.length === 0 ? '' : info.filter(item => item.object === `Instagram Profile`)[0].content
+    const phone_number = info.length === 0 ? '' : info.filter(item => item.object === `Phone`)[0].content
+    const address = info.length === 0 ? '' : info.filter(item => item.object === `Address`)[0].content
+    const hours = info.length === 0 ? '' : info.filter(item => item.object === `Hours`)[0].content 
 
-const Contact = ({scrollTo, info}) => {
+    const paragraphs = hours.split('\n')    
+
     const handleClick = (item) => {
         scrollTo(item);
-    };    
+    };
 
     return (
         <section id='contact' className='contact'>
@@ -19,23 +25,17 @@ const Contact = ({scrollTo, info}) => {
                         <img src={logo} alt="" />
                     </div>
                     <div className="address_link">
-                        <span onClick={() => window.open(maps_link, "_blank", "noreferrer")}>64 Logan Road, Wooloongabba 4102</span>
+                        <span onClick={() => window.open(maps_link, "_blank", "noreferrer")}>{address}</span>
                     </div>
                     <div className="address_phone">
-                        <span>Phone: 0738467713</span>
+                        <span>Phone: {phone_number}</span>
                     </div>
                 </div>
                 <div className="info_hours">
                     <div className="hours_list">
                         <span>Hours</span>
                         <ul>
-                            <li>Tuesday: 5:30pm - 8:30pm</li>
-                            <li>Wednesday: 5:30pm - 8:30pm</li>
-                            <li>Thursday: 5:30pm - 8:30pm</li>
-                            <li>Friday: 5:30pm - 8:30pm</li>
-                            <li>Saturday: 5:30pm - 8:30pm</li>
-                            <li>Sunday: 5:30pm - 8:30pm</li>
-                            <li>Monday: Closed</li>
+                            { paragraphs.map((item, i) => <li key={i}>{item}</li>) }
                         </ul>
                     </div>
                 </div>

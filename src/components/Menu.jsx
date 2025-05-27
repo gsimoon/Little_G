@@ -70,27 +70,6 @@ const Menu = () => {
           </div>
         ))
       }
-      {/* {
-        menu.map((item, i) => (
-          <div className="menu_view" key={i}>
-            <div className="view_title"><h4>{item.name}</h4></div>
-            <div className="view_section">
-              {(item.items).map((obj, i) => (
-                <div className="card" key={i}>
-                  <div className="card_img">
-                    <img src={obj.img} alt="" />
-                  </div>
-                  <div className="card_text">
-                    <div className="card_name">{obj.name}</div>
-                    <div className="card_description">{obj.description}</div>
-                    <div className="card_price">{obj.price}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))
-      } */}
     </section>
   )
 };

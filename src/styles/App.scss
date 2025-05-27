@@ -13,10 +13,11 @@
   .hero {
     display: flex;
     flex-direction: column;
-    min-height: 500px;
+    min-height: 600px;
     height: 100vh;
     width: 100%;
     background-color: rgb(32, 22, 22);
+    overflow: hidden;
 
     .hero_header {
       width: 100%;
@@ -108,15 +109,15 @@
     }
 
     .hero_content {
-      height: calc(100% - 50px);
+      min-height: calc(100% - 50px);
       width: 100%;
       display: flex;
       position: relative;
 
       .content_bgd {
+        min-height: 550px;
         position: absolute;
         width: 100%;
-        // height: 100%;
         background-image: url('../images/hero_bgd.jpg');
         background-position: center;
         background-repeat: no-repeat;
@@ -125,8 +126,8 @@
       }
 
       .content_description {
+        height: 100%;
         width: 60%;
-        overflow: hidden;
         padding: 50px;
         box-sizing: border-box;
 
@@ -635,8 +636,6 @@
       }
 
       .hero_content {
-        min-height: calc(100vh - 50px);
-
         .content_description {
           height: auto;
           width: 100%;

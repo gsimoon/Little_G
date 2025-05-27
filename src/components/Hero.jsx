@@ -1,10 +1,15 @@
 import logo from "../images/logo.png"
 import Icons from "../icons/Icons";
-import { useState } from "react";
-
-const booking_url = 'https://booking.resdiary.com/widget/Standard/LittleGPizzeria/10956'
+import React, { useState } from "react";
 
 const Hero = ({ scrollTo, info }) => {
+  const business = info.length === 0 ? '' : info.filter(item => item.object === `Business`)[0].content
+  const home_content = info.length === 0 ? '' : info.filter(item => item.object === `Home Content`)[0].content
+  const booking_url = info.length === 0 ? '' : info.filter(item => item.object === `Booking Link`)[0].content
+
+  const paragraphs = home_content.split('\n')
+
+
   const handleClick = (item) => {
     scrollTo(item);
     setIsMenuOpen(false)
@@ -36,13 +41,14 @@ const Hero = ({ scrollTo, info }) => {
         <div className="content_bgd"></div>
         <div className="content_description">
           <div className="description_text">
-            <h1>Little g Pizzeria</h1>
+            <h1>{business}</h1>
             <span>
-              Brisbane's Best Pizza
-              <br></br>
-              Enjoy the perfect crust in a relaxed, welcoming atmosphere. From fan-favorite fried chicken to monthly specials and a curated wine and cocktail list, there's something delicious for every taste.
-              <br></br>
-              Located just around the corner from The Gabba on Logan Road, our venue is minimalist chic, our food is unpretentiously delicious and we are open 7 nights a week for your to enjoy.
+              {paragraphs.map((item, i) => (
+                <React.Fragment key={i}>
+                  {item}
+                  <br />
+                </React.Fragment>
+              ))}
             </span>
           </div>
         </div>

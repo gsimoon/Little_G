@@ -1,15 +1,20 @@
-const About = (info) => {    
+import React from "react";
+
+const About = ({ info }) => {
+    const about = info.length === 0 ? '' : info.filter(item => item.object === `About`)[0].content
+    const paragraphs = about.split('\n')
+
     return (
         <section id='about' className='about'>
             <div className="about_description">
                 <div className="description_header">ABOUT US</div>
                 <div className="description_text">
-                    More than just pizza...
-                    <br />
-                    Unpretentiously delicious food!
-                    <br />
-                    Experimenting with unique flavour combinations has always been a passion for our chefs. <br />
-                    From when Little g first opened next to its sister café in Highgate Hill, we have loved serving mac n cheese filled arancini balls, Big Mac pizzas, and Bolognese filled spring rolls.
+                    {paragraphs.map((item, i) => (
+                        <React.Fragment key={i}>
+                            {item}
+                            <br />
+                        </React.Fragment>
+                    ))}
                 </div>
             </div>
             {/* <div className="about_reviews">
