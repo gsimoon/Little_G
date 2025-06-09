@@ -28,7 +28,8 @@ const Contact = ({ scrollTo, info }) => {
                         <span onClick={() => window.open(maps_link, "_blank", "noreferrer")}>{address}</span>
                     </div>
                     <div className="address_phone">
-                        <span>Phone: {phone_number}</span>
+                        {/* <span>Phone: {phone_number}</span> */}
+                        <a href={`tel:+61${phone_number}`}>Phone: {phone_number}</a>
                     </div>
                 </div>
                 <div className="info_hours">

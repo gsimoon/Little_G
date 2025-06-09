@@ -3,11 +3,11 @@ import Icons from "../icons/Icons";
 import React, { useState } from "react";
 
 const Hero = ({ scrollTo, info }) => {
-  const business = info.length === 0 ? '' : info.filter(item => item.object === `Business`)[0].content
-  const home_content = info.length === 0 ? '' : info.filter(item => item.object === `Home Content`)[0].content
+  // const business = info.length === 0 ? '' : info.filter(item => item.object === `Business`)[0].content
+  // const home_content = info.length === 0 ? '' : info.filter(item => item.object === `Home Content`)[0].content
   const booking_url = info.length === 0 ? '' : info.filter(item => item.object === `Booking Link`)[0].content
 
-  const paragraphs = home_content.split('\n')
+  // const paragraphs = home_content.split('\n')
 
 
   const handleClick = (item) => {
@@ -41,14 +41,21 @@ const Hero = ({ scrollTo, info }) => {
         <div className="content_bgd"></div>
         <div className="content_description">
           <div className="description_text">
-            <h1>{business}</h1>
+            <h1>Little g Pizzeria</h1>
             <span>
-              {paragraphs.map((item, i) => (
+              Brisbane’s Best Pizza
+              <br/>
+              Enjoy the perfect crust in a relaxed, welcoming atmosphere. From our fan-favorite fried chicken to a curated selection of wines and cocktails, there is something to satisfy every craving.
+              <br/>
+              Located just around the corner from The Gabba on Logan Road, our venue pairs minimalist chic with unpretentious, delicious food. Check our current opening hours and drop by. 
+              <br/>
+              We’d love to serve you.
+              {/* {paragraphs.map((item, i) => (
                 <React.Fragment key={i}>
                   {item}
                   <br />
                 </React.Fragment>
-              ))}
+              ))} */}
             </span>
           </div>
         </div>
