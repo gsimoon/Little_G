@@ -61,7 +61,7 @@ const Menu = () => {
                     <div className="card_text">
                       <div className="card_name">{obj.name}</div>
                       <div className="card_description">{obj.description}</div>
-                      <div className="card_price">{obj.price}</div>
+                      <div className="card_price">{`$ ${obj.price}`}</div>
                     </div>
                   </div>
                 ))
