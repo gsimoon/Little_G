@@ -650,6 +650,7 @@
       }
 
       .hero_content {
+        height: calc(100vh - 50px);
         .content_description {
           height: auto;
           width: 100%;
