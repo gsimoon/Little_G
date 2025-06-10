@@ -470,7 +470,8 @@
           align-items: center;
           justify-content: center;
 
-          span, a {
+          span,
+          a {
             width: 100%;
             color: white;
             font-size: 1rem;
@@ -651,6 +652,7 @@
 
       .hero_content {
         height: calc(100vh - 50px);
+
         .content_description {
           height: auto;
           width: 100%;
@@ -662,6 +664,14 @@
               text-align: center;
             }
           }
+        }
+      }
+    }
+
+    .about {
+      .about_description {
+        .description_text {
+          width: 100%;
         }
       }
     }
