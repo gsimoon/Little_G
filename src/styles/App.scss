@@ -703,3 +703,9 @@
     }
   }
 }
+
+.glasp-extension,
+.glasp-extension-toaster {
+  display: none !important;
+  pointer-events: none !important;
+}
